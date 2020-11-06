@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <OnboardingForm addUser={addUser} />
       {users.map((user, i) => 
-        <pre key={i}>{JSON.stringify(user)}</pre>  
+        <pre class="user" key={i}>{JSON.stringify(user)}</pre>  
       )}
     </div>
   );

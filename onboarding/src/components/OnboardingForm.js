@@ -51,28 +51,28 @@ const OnboardingForm = ({addUser}) => {
 
     return (
         <div>
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit} data-cy="form">
                 <div>
                     <label htmlFor="name">Name:</label>
-                    <input name="name" type="text" value={formData.name} onChange={handleInput} />
+                    <input name="name" type="text" value={formData.name} onChange={handleInput} data-cy="name" />
                 </div>
                 {(errors.name) ? errors.name : null}
                 <div>
                     <label htmlFor="email">Email:</label>
-                    <input name="email" type="text" value={formData.email} onChange={handleInput} />
+                    <input name="email" type="text" value={formData.email} onChange={handleInput} data-cy="email" />
                 </div>
                 {(errors.email) ? errors.email : null}
                 <div>
                     <label htmlFor="password">Password:</label>
-                    <input name="password" type="password" value={formData.password} onChange={handleInput} />
+                    <input name="password" type="password" value={formData.password} onChange={handleInput} data-cy="password" />
                 </div>
                 {(errors.password) ? errors.password : null}
                 <div>
                     <label htmlFor="tos">Terms of Service:</label>
-                    <input name="tos" type="checkbox" checked={formData.tos} onChange={handleInput} />
+                    <input name="tos" type="checkbox" checked={formData.tos} onChange={handleInput} data-cy="tos" />
                 </div>
                 {(errors.tos) ? errors.tos : null}
-                <button disabled={!formValid}>Submit</button>
+                <button disabled={!formValid} data-cy="submit">Submit</button>
             </Form>
         </div>
      );
