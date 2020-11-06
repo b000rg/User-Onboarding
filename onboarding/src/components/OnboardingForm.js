@@ -4,7 +4,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 import formSchema from '../formSchema';
 
-const OnboardingForm = () => {
+const OnboardingForm = ({addUser}) => {
     const defaultData = {name: '', email: '', password: '', tos: false};
     const [formData, setFormData] = useState({...defaultData});
     const [errors, setErrors] = useState({name: '', email: '', password: '', tos: ''});
@@ -32,7 +32,7 @@ const OnboardingForm = () => {
         axios
             .post('https://reqres.in/api/users', formData)
             .then(res => {
-                console.log(res);
+                addUser(res.data);
             })
             .catch(err => {
                 console.log(err);
